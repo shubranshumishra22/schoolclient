@@ -65,10 +65,7 @@ export default function Login() {
             Sign In
           </Button>
 
-          <p className="text-center text-sm text-slate-500">
-            Don't have an account?{' '}
-            <Link to="/admin/signup" className="text-navy-800 font-medium hover:underline">Sign Up</Link>
-          </p>
+
         </form>
       </div>
     </div>

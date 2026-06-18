@@ -11,7 +11,6 @@ const Events = lazy(() => import('../pages/Events'));
 const Contact = lazy(() => import('../pages/Contact'));
 const NotFound = lazy(() => import('../pages/NotFound'));
 const Login = lazy(() => import('../pages/Login'));
-const Signup = lazy(() => import('../pages/Signup'));
 const Dashboard = lazy(() => import('../pages/admin/Dashboard'));
 
 function Loading() {
@@ -34,7 +33,6 @@ export default function AppRoutes() {
         <Route path="/events" element={<Events />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin/login" element={<Login />} />
-        <Route path="/admin/signup" element={<Signup />} />
         <Route
           path="/admin/dashboard"
           element={
