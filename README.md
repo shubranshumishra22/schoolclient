@@ -1,16 +1,54 @@
-# React + Vite
+# Prentice The school — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive school website built with React, Vite, Tailwind CSS v3, and Framer Motion.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **7 public pages** — Home, About, Academics, Admissions, Gallery, Events, Contact
+- **Admin dashboard** — login/signup with JWT auth, view admission enquiries and contact messages
+- **Animated UI** — scroll-triggered animations via Framer Motion
+- **Form validation** — React Hook Form + Zod schemas
+- **Mobile friendly** — responsive nav with slide-out menu
+- **API ready** — Axios client configured to talk to the backend API
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Tool | Purpose |
+|------|---------|
+| React 19 | UI framework |
+| Vite 6 | Build tool / dev server |
+| Tailwind CSS v3 | Styling |
+| Framer Motion | Animations |
+| React Router v6 | Client-side routing (lazy loaded) |
+| React Hook Form + Zod | Form state + validation |
+| Axios | HTTP client |
+| Lucide React | Icons |
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Opens at `http://localhost:5173`.
+
+## Backend
+
+The frontend expects a backend API running at the URL set in `VITE_API_URL` (see `.env`).  
+The corresponding backend (Express + PostgreSQL) is at https://github.com/Supriyamishra1992/prenticetheschool.
+
+### API Endpoints Used
+
+| Method | Endpoint | Purpose |
+|--------|----------|---------|
+| GET | /news | Latest news |
+| GET | /events | Upcoming events |
+| GET | /gallery | Photo gallery |
+| POST | /contact | Submit contact form |
+| POST | /admissions | Submit admission enquiry |
+| POST | /auth/signup | Admin registration |
+| POST | /auth/login | Admin login |
+| GET | /auth/me | Verify JWT token |
+| GET | /admissions | List enquiries (auth) |
+| GET | /contact | List messages (auth) |
