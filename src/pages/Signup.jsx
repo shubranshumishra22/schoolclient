@@ -19,7 +19,7 @@ export default function Signup() {
       await signup({ name, email, password });
       navigate('/admin/dashboard');
     } catch (err) {
-      setError(err.response?.data?.message || 'Signup failed. Please try again.');
+      setError(err.response?.data?.error || 'Signup failed. Please try again.');
     }
   };
 

@@ -41,7 +41,7 @@ function DataTable({ title, icon: Icon, data, columns, loading, error, onRefresh
             </thead>
             <tbody className="divide-y divide-slate-100">
               {data.map((row, i) => (
-                <tr key={row._id || i} className="hover:bg-cream-50 transition">
+                <tr key={row.id || i} className="hover:bg-cream-50 transition">
                   {columns.map((col) => (
                     <td key={col.key} className="px-6 py-3 text-slate-600 whitespace-nowrap">
                       {col.render ? col.render(row) : row[col.key]}
@@ -73,8 +73,8 @@ export default function Dashboard() {
     setError('');
     try {
       const [admRes, conRes] = await Promise.all([getAdmissions(), getContacts()]);
-      setAdmissions(admRes.data.data || admRes.data || []);
-      setContacts(conRes.data.data || conRes.data || []);
+      setAdmissions(admRes.data || []);
+      setContacts(conRes.data || []);
     } catch {
       setError('Failed to load data. Make sure the API server is running.');
     } finally {

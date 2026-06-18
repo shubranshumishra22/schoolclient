@@ -13,6 +13,7 @@ import { submitContact } from '../api';
 const schema = z.object({
   name: z.string().min(1, 'Name is required'),
   email: z.string().email('Valid email is required'),
+  phone: z.string().min(10, 'Valid phone number is required'),
   subject: z.string().min(1, 'Subject is required'),
   message: z.string().min(1, 'Message is required'),
 });
@@ -92,9 +93,10 @@ export default function Contact() {
               <div className="bg-cream-50 rounded-xl p-8">
                 <h3 className="font-serif text-2xl text-navy-800 mb-6">Send a Message</h3>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <Input label="Name *" name="name" register={register} error={errors.name?.message} placeholder="Your name" />
                     <Input label="Email *" name="email" type="email" register={register} error={errors.email?.message} placeholder="Your email" />
+                    <Input label="Phone *" name="phone" type="tel" register={register} error={errors.phone?.message} placeholder="Your phone" />
                   </div>
                   <Input label="Subject *" name="subject" register={register} error={errors.subject?.message} placeholder="Subject" />
                   <div className="flex flex-col gap-1">
